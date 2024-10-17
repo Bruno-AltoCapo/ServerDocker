@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  nginx:
+    build:
+      context: ./nginx
+    ports:
+      - "8080:80"
+
+  node:
+    build:
+      context: ./node
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=xXxXXXX
+      - MONGO_INITDB_ROOT_PASSWORD=YyyYYYY
